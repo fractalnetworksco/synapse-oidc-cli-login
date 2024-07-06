@@ -1,3 +1,4 @@
+import sh
 import requests
 import uuid
 from urllib import parse
