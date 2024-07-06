@@ -3,17 +3,11 @@ import threading
 
 app = Flask(__name__)
 
-# A dictionary to store the callback data and cookies for each state
 callback_data = {}
 callback_event = threading.Event()
 
 @app.route('/callback/<session_id>')
 def callback(session_id):
-    code = request.args.get('code')
-    state = request.args.get('state')
-    # store entire querystring in variable
-    # query_string = request.query_string.decode('utf-8')
-    # store loginToken query param
     login_token = request.args.get('loginToken')
 
     # Store the callback data and cookies
